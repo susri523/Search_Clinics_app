@@ -1,0 +1,1 @@
+web: gunicorn django_clinic_demo.wsgi --log-file - 
