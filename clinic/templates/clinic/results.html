@@ -1,0 +1,46 @@
+{% extends 'clinic/base.html'%}
+{% block content %}    
+
+{% load static %}
+
+    <div class="clearfix">
+    <br>
+    {% if error %}
+        This is not a valid zipcode!
+    {% else %}
+
+        {% if city %}
+
+            <div class="under-header-div">Here are clinics in the {{city}} area!</div> 
+            <br>
+        {% else %}
+            <div class="under-header-div">Here are all the clinics near you!</div> 
+            <br>
+        {% endif %}
+
+        <div class="flex-container">
+
+            {% for clinic in clinics %}
+            
+            <div class="flex-item">
+                <h5>{{clinic.name}}</h5>
+                <br>
+                <a href={{clinic.website}}>WEBSITE</a> 
+                <br> 
+                <!-- <img src='{% static "/media/phone.png" %}' width="20px" height="20px"> --> 
+                <br>
+                <img src="https://www.pinclipart.com/picdir/big/202-2020524_cliparto.png" width="15px" height="15px"> {{clinic.address}}
+
+                {% if clinic.notes %}
+                <br>
+                <element class="notes">{{clinic.notes}}</element>
+                {% endif %}
+                </div>
+                
+            <br>
+
+            {% endfor %}
+        </div>  
+    {% endif %}
+        </div>
+{% endblock %}

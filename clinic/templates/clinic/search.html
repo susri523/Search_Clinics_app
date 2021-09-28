@@ -1,0 +1,31 @@
+{% extends 'clinic/base.html'%}
+{% block content %}    
+
+        <br>
+        <div class="center-div">
+        
+        <div class="center-div-item">
+
+        {% if error %}
+        <p style=color:red> Sorry, looks like no clinics in that radius.</p>
+        {% endif %}
+        <form method = "POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <!-- <p></p> -->
+                {{field.label}}
+                {{field}}
+                <br>
+                <!-- <p></p> -->
+            {% endfor %}
+                <br>
+                <p></p>
+                <!-- <element class="widget-search"> -->
+
+                 <input type="submit" value="Submit"> <!--Find near me -->
+                <!-- </element> -->
+            </div>
+        </form>
+    </div>
+     
+{% endblock %}
