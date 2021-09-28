@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n1gro6xp8l9#payc5mnw_0$(94ttx!kh01twwok+5$b6_xxtqb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gentle-peak-52730.herokuapp.com' ,]
 
 # add redis as host
 REDIS_HOST = 'localhost'
