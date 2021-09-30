@@ -9,6 +9,11 @@
         {% if error %}
         <p style=color:red> Sorry, looks like no clinics in that radius.</p>
         {% endif %}
+
+        <b>Enter your zipcode, and the radius (in miles) you are able to travel.</b>
+        <p>
+
+        </p>
         <form method = "POST">
             {% csrf_token %}
             {% for field in form %}
